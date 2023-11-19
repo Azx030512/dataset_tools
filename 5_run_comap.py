@@ -53,6 +53,6 @@ def make_director(path, exists_ok = True):
 
 
 if __name__ == '__main__':
-    dataset_path = "/home/azx/dataset/east_path"
-    make_director(os.path.join(dataset_path,"sparse","0"))
-    run_colmap(dataset_path, mode = 'ply')
+    dataset_path = "/mnt/nas_9/group/srtp2/datasets/pond"
+    make_director(os.path.join(dataset_path,"sparse"))
+    run_colmap(dataset_path, mode = 'all')
