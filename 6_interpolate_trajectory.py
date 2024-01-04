@@ -27,10 +27,10 @@ def interpolate_pose(pose_begin, pose_end, interp_frame_num = 15):
     return poses_test
 
 
-transform_info = json.load(open('/home/azx/dataset/pond/json/transform_info.json'))
-start_img="IMG20231117103741.jpg"
-end_img="IMG20231117103709.jpg"
-midway_imgs = ["IMG20231117103731.jpg","IMG20231117103723.jpg"]
+transform_info = json.load(open('/home/azx/dataset/lake/json/transform_info.json'))
+start_img="IMG20231118101229.jpg"
+end_img="IMG20231118101354.jpg"
+midway_imgs = ["IMG20231118101231.jpg","IMG20231118101239.jpg","IMG20231118101306.jpg"]
 
 midway_poses = [i for i in range(len(midway_imgs))]
 
@@ -60,5 +60,5 @@ else:
     end_poses = interpolate_pose(midway_poses[-1], pose_end, interp_frame_num = 15)
     trajectory.append(end_poses)
     trajectory = np.concatenate(trajectory,axis=0)
-np.save("interpolate_trajectory.npy", trajectory)
+np.save("interpolate_trajectory3.npy", trajectory)
 

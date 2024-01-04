@@ -290,8 +290,8 @@ def visual_trajectory(trajectory, pcd, dataset_cameras = None, phone_screen = No
 
 
 if __name__ == "__main__":
-    record = False
-    pcd_path = "/home/azx/dataset/library/library.ply"
+    record =False
+    pcd_path = "/home/azx/dataset/zju_gate_front_crosswise/zju_gate_front_crosswise.ply"
     pcd = o3d.io.read_point_cloud(pcd_path)
     # 获取pose
     # 按大写C记录位姿，按Q退出
@@ -304,7 +304,7 @@ if __name__ == "__main__":
         trajectory = poses_trajectory_interp()
         np.save(os.path.join(os.path.dirname(pcd_path),"trajectory.npy"), trajectory)
     else:
-        trajectory = np.load('library3.npy','r')
+        trajectory = np.load('interpolate_trajectory3.npy','r')
     
     # 可视化位姿
     visual_trajectory(trajectory, pcd, dataset_cameras = original_cameras, phone_screen = phone_screen)
